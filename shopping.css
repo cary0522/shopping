@@ -21,3 +21,42 @@
 .date{
     display: none;
 }
+
+@media screen and (min-width:576px) {
+    .bars_btn {
+        display: none;
+    }
+    
+    .burger_item{
+        left: 0px;
+        top: 0px;
+    }
+
+    .trash{
+        display: inline-block;
+    }    
+    
+    .footer{
+        position: relative;
+    }
+
+    .date{
+        position: absolute;
+        display: block;
+        writing-mode: vertical-rl;
+        top: 0px;
+        right: 0px;
+    }
+
+    .year{
+        position: relative;
+        left: 86%;
+        top: 20px;
+    }
+
+
+    /* .orderSummary{
+        background-color: #198754;
+        opacity: 10%;
+    } */
+}
