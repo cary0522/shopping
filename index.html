@@ -42,19 +42,19 @@
                 </div>
                 <div class="col-6">
                     <div class="m-2">
-                        <p class="p-0 m-0">sweet cake</p>
+                        <p class="p-0 m-0" id="productOneName"></p>
                         <div class="d-flex">
-                            <p class="p-0 m-0 perPrice" id="perPriceS">200</p>
+                            <p class="p-0 m-0 perPrice" id="perPriceS"></p>
                             <p class="p-0 m-0">$</p>
                         </div>
                     </div>
                     <div class="input-group my-3">
-                        <button onclick="decrementS()" class="btn input-group-text border-secondary-subtle btnMinus"
-                            id="btnMinusS">
+                        <button onclick="decrement(this)" class="btn input-group-text border-secondary-subtle btnMinus"
+                            data-value="123" id="btnMinusS">
                             <i class="fa-solid fa-minus text-success"></i>
                         </button>
                         <input type="text" class="form-control goodsOne text-success" value="1" id="goodsOne">
-                        <button onclick="incrementS()" class="btn input-group-text border-secondary-subtle btnPlus"
+                        <button onclick="increment(this)" class="btn input-group-text border-secondary-subtle btnPlus"
                             id="btnPlusS">
                             <i class="fa-solid fa-plus text-success"></i>
                         </button>
@@ -62,26 +62,26 @@
                 </div>
                 <div class="col-12 d-flex justify-content-end border-top border-bottom border-secondary-subtle my-2">
                     <p class="py-2 m-0">NT$</p>
-                    <p class="py-2 m-0 totalPrice" id="totalPriceS">200</p>
+                    <p class="py-2 m-0 totalPrice" id="totalPriceS"></p>
                 </div>
                 <div class="col-6 ">
                     <img src="https://picsum.photos/id/202/200/200" alt="">
                 </div>
                 <div class="col-6">
                     <div class="m-2">
-                        <p class="p-0 m-0">butter cake</p>
+                        <p class="p-0 m-0" id="productTwoName"></p>
                         <div class="d-flex">
-                            <p class="p-0 m-0 perPrice" id="perPriceB">400</p>
+                            <p class="p-0 m-0 perPrice" id="perPriceB"></p>
                             <p class="p-0 m-0">$</p>
                         </div>
                     </div>
                     <div class="input-group my-3">
-                        <button onclick="decrementB()" class="btn input-group-text border-secondary-subtle btnMinus"
+                        <button onclick="decrement(this)" class="btn input-group-text border-secondary-subtle btnMinus"
                             id="btnMinusB">
                             <i class="fa-solid fa-minus text-success"></i>
                         </button>
                         <input type="text" class="form-control goodsOne text-success" value="1" id="goodsTwo">
-                        <button onclick="incrementB()" class="btn input-group-text border-secondary-subtle btnPlus"
+                        <button onclick="increment(this)" class="btn input-group-text border-secondary-subtle btnPlus"
                             id="btnPlusB">
                             <i class="fa-solid fa-plus text-success"></i>
                         </button>
@@ -89,26 +89,26 @@
                 </div>
                 <div class="col-12 d-flex justify-content-end border-top border-bottom border-secondary-subtle my-2">
                     <p class="py-2 m-0">NT$</p>
-                    <p class="py-2 m-0 totalPrice" id="totalPriceB">400</p>
+                    <p class="py-2 m-0 totalPrice" id="totalPriceB"></p>
                 </div>
                 <div class="col-6 ">
                     <img src="https://picsum.photos/id/201/200/200" alt="">
                 </div>
                 <div class="col-6">
                     <div class="m-2">
-                        <p class="p-0 m-0">banana cake</p>
+                        <p class="p-0 m-0" id="productThreeName"></p>
                         <div class="d-flex">
-                            <p class="p-0 m-0 perPrice" id="perPriceA">300</p>
+                            <p class="p-0 m-0 perPrice" id="perPriceA"></p>
                             <p class="p-0 m-0">$</p>
                         </div>
                     </div>
                     <div class="input-group my-3">
-                        <button onclick="decrementA()" class="btn input-group-text border-secondary-subtle btnMinusA"
+                        <button onclick="decrement(this)" class="btn input-group-text border-secondary-subtle btnMinusA"
                             id="btnMinusA">
                             <i class="fa-solid fa-minus text-success"></i>
                         </button>
                         <input type="text" class="form-control goodsOne text-success" value="1" id="goodsThree">
-                        <button onclick="incrementA()" class="btn input-group-text border-secondary-subtle btnPlusA"
+                        <button onclick="increment(this)" class="btn input-group-text border-secondary-subtle btnPlusA"
                             id="btnPlusA">
                             <i class="fa-solid fa-plus text-success"></i>
                         </button>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-12 d-flex justify-content-end border-top border-bottom border-secondary-subtle my-2">
                     <p class="py-2 m-0">NT$</p>
-                    <p class="py-2 m-0 totalPrice" id="totalPriceA">300</p>
+                    <p class="py-2 m-0 totalPrice" id="totalPriceA"></p>
                 </div>
                 <div class="trash">
                     <i class="fa-solid fa-trash"></i>
@@ -135,7 +135,7 @@
                     <p>NT$</p>
                 </div>
                 <div class="col-3 text-left">
-                    <p id="totalPriceTwo">900</p>
+                    <p id="totalPriceTwo"></p>
                 </div>
             </div>
             <div class="d-flex text-success">
@@ -157,7 +157,7 @@
                     <p>NT$</p>
                 </div>
                 <div class="col-3 text-left">
-                    <p id="allPrice">960</p>
+                    <p id="allPrice"></p>
                 </div>
             </div>
         </div>
@@ -214,9 +214,6 @@
         let goodsOne = document.querySelector("#goodsOne");
         let goodsTwo = document.querySelector("#goodsTwo");
         let goodsThree = document.querySelector("#goodsThree");
-        let perPriceS = document.querySelector("#perPriceS");
-        let perPriceB = document.querySelector("#perPriceB");
-        let perPriceA = document.querySelector("#perPriceA");
         let totalPriceS = document.querySelector("#totalPriceS");
         let totalPriceB = document.querySelector("#totalPriceB");
         let totalPriceA = document.querySelector("#totalPriceA");
@@ -230,37 +227,115 @@
         let freight = document.querySelector("#freight");
         let allPrice = document.querySelector("#allPrice");
 
-        function decrementS() {
-            let currentValue = parseInt(goodsOne.value);
-
-            if (currentValue > 0) {
-                goodsOne.value = currentValue - 1;
-            }
-
-            let currentValueS = parseInt(goodsOne.value);
-            let perPriceSNum = parseInt(perPriceS.textContent);
-
-            totalPriceS.textContent = perPriceSNum * currentValueS;
-            let totalPriceSNum = parseInt(totalPriceS.textContent);
-            let totalPriceBNum = parseInt(totalPriceB.textContent);
-            let totalPriceANum = parseInt(totalPriceA.textContent);
-            totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
-
-            let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
-            let freightNum = parseInt(freight.textContent);
-
-            allPrice.textContent = totalPriceTwoNum + freightNum;
+        let productOne = {
+            name: "sweet",
+            price: 40,
         }
 
-        function incrementS() {
+        let productTwo = {
+            name: "butter",
+            price: 40,
+        }
+
+        let productThree = {
+            name: "banana",
+            price: 10,
+        }
+
+        let perPriceS = document.querySelector("#perPriceS");
+        perPriceS.textContent = productOne.price;
+        totalPriceS.textContent = productOne.price;
+        let productOneName = document.querySelector("#productOneName");
+        productOneName.textContent = productOne.name;
+        let perPriceB = document.querySelector("#perPriceB");
+        perPriceB.textContent = productTwo.price;
+        totalPriceB.textContent = productTwo.price;
+        let productTwoName = document.querySelector("#productTwoName");
+        productTwoName.textContent = productTwo.name;
+        let perPriceA = document.querySelector("#perPriceA");
+        perPriceA.textContent = productThree.price;
+        totalPriceA.textContent = productThree.price;
+        let productThreeName = document.querySelector("#productThreeName");
+        productThreeName.textContent = productThree.name;
+
+        totalPriceTwo.textContent = productOne.price + productTwo.price + productThree.price;
+        allPrice.textContent = parseInt(totalPriceTwo.textContent) + parseInt(freight.textContent);
+
+        function decrement(e) {
+
+            if (e.id == "btnMinusS") {
+                let currentValue = parseInt(goodsOne.value);
+
+                if (currentValue > 0) {
+                    goodsOne.value = currentValue - 1;
+                }
+
+                let currentValueS = parseInt(goodsOne.value);
+
+                totalPriceS.textContent = productOne.price * currentValueS;
+                let totalPriceSNum = parseInt(totalPriceS.textContent);
+                let totalPriceBNum = parseInt(totalPriceB.textContent);
+                let totalPriceANum = parseInt(totalPriceA.textContent);
+                totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
+
+                let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
+                let freightNum = parseInt(freight.textContent);
+
+                allPrice.textContent = totalPriceTwoNum + freightNum;
+
+            } else if (e.id == "btnMinusB") {
+
+                let currentValueTwo = parseInt(goodsTwo.value);
+
+                if (currentValueTwo > 0) {
+                    goodsTwo.value = currentValueTwo - 1;
+                }
+
+                let currentValueB = parseInt(goodsTwo.value);
+
+                totalPriceB.textContent = productTwo.price * currentValueB;
+                let totalPriceSNum = parseInt(totalPriceS.textContent);
+                let totalPriceBNum = parseInt(totalPriceB.textContent);
+                let totalPriceANum = parseInt(totalPriceA.textContent);
+                totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
+
+                let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
+                let freightNum = parseInt(freight.textContent);
+
+                allPrice.textContent = totalPriceTwoNum + freightNum;
+
+            } else {
+                let currentValueThree = parseInt(goodsThree.value);
+
+                if (currentValueThree > 0) {
+                    goodsThree.value = currentValueThree - 1;
+                }
+
+                let currentValueA = parseInt(goodsThree.value);
+
+                totalPriceA.textContent = productThree.price * currentValueA;
+                let totalPriceSNum = parseInt(totalPriceS.textContent);
+                let totalPriceBNum = parseInt(totalPriceB.textContent);
+                let totalPriceANum = parseInt(totalPriceA.textContent);
+                totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
+
+                let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
+                let freightNum = parseInt(freight.textContent);
+
+                allPrice.textContent = totalPriceTwoNum + freightNum;
+            }
+        }
+
+        function increment(e){
+
+            if (e.id == "btnPlusS"){
             let currentValue = parseInt(goodsOne.value);
 
             goodsOne.value = currentValue + 1;
 
             let currentValueS = parseInt(goodsOne.value);
-            let perPriceSNum = parseInt(perPriceS.textContent);
 
-            totalPriceS.textContent = perPriceSNum * currentValueS;
+            totalPriceS.textContent = productOne.price * currentValueS;
             let totalPriceSNum = parseInt(totalPriceS.textContent);
             let totalPriceBNum = parseInt(totalPriceB.textContent);
             let totalPriceANum = parseInt(totalPriceA.textContent);
@@ -269,39 +344,14 @@
             let freightNum = parseInt(freight.textContent);
 
             allPrice.textContent = totalPriceTwoNum + freightNum;
-        }
-
-        function decrementB() {
-            let currentValueTwo = parseInt(goodsTwo.value);
-
-            if (currentValueTwo > 0) {
-                goodsTwo.value = currentValueTwo - 1;
-            }
-
-            let currentValueB = parseInt(goodsTwo.value);
-            let perPriceBNum = parseInt(perPriceB.textContent);
-
-            totalPriceB.textContent = perPriceBNum * currentValueB;
-            let totalPriceSNum = parseInt(totalPriceS.textContent);
-            let totalPriceBNum = parseInt(totalPriceB.textContent);
-            let totalPriceANum = parseInt(totalPriceA.textContent);
-            totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
-
-            let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
-            let freightNum = parseInt(freight.textContent);
-
-            allPrice.textContent = totalPriceTwoNum + freightNum;
-        }
-
-        function incrementB() {
+            }else if (e.id == "btnPlusB"){
             let currentValueTwo = parseInt(goodsTwo.value);
 
             goodsTwo.value = currentValueTwo + 1;
 
             let currentValueB = parseInt(goodsTwo.value);
-            let perPriceBNum = parseInt(perPriceB.textContent);
 
-            totalPriceB.textContent = perPriceBNum * currentValueB;
+            totalPriceB.textContent = productTwo.price * currentValueB;
             let totalPriceSNum = parseInt(totalPriceS.textContent);
             let totalPriceBNum = parseInt(totalPriceB.textContent);
             let totalPriceANum = parseInt(totalPriceA.textContent);
@@ -311,39 +361,14 @@
             let freightNum = parseInt(freight.textContent);
 
             allPrice.textContent = totalPriceTwoNum + freightNum;
-        }
-
-        function decrementA() {
-            let currentValueThree = parseInt(goodsThree.value);
-
-            if (currentValueThree > 0) {
-                goodsThree.value = currentValueThree - 1;
-            }
-
-            let currentValueA = parseInt(goodsThree.value);
-            let perPriceANum = parseInt(perPriceA.textContent);
-
-            totalPriceA.textContent = perPriceANum * currentValueA;
-            let totalPriceSNum = parseInt(totalPriceS.textContent);
-            let totalPriceBNum = parseInt(totalPriceB.textContent);
-            let totalPriceANum = parseInt(totalPriceA.textContent);
-            totalPriceTwo.textContent = totalPriceSNum + totalPriceBNum + totalPriceANum;
-
-            let totalPriceTwoNum = parseInt(totalPriceTwo.textContent);
-            let freightNum = parseInt(freight.textContent);
-
-            allPrice.textContent = totalPriceTwoNum + freightNum;
-        }
-
-        function incrementA() {
+            }else{
             let currentValueThree = parseInt(goodsThree.value);
 
             goodsThree.value = currentValueThree + 1;
 
             let currentValueA = parseInt(goodsThree.value);
-            let perPriceANum = parseInt(perPriceA.textContent);
 
-            totalPriceA.textContent = perPriceANum * currentValueA;
+            totalPriceA.textContent = productThree.price * currentValueA;
             let totalPriceSNum = parseInt(totalPriceS.textContent);
             let totalPriceBNum = parseInt(totalPriceB.textContent);
             let totalPriceANum = parseInt(totalPriceA.textContent);
@@ -353,6 +378,7 @@
             let freightNum = parseInt(freight.textContent);
 
             allPrice.textContent = totalPriceTwoNum + freightNum;
+            }
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
