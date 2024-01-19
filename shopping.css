@@ -14,15 +14,26 @@
     left: 0px;
 }
 
-.trash{
-    display: none;
+.form-control{
+    width: 50%;
+}
+
+.cart_shopping{
+    top: 0px;
+    right: 0px;
+}
+
+.totalPrice{
+    border-top: 1px #D0D0D0 solid;
+    border-bottom: 1px 	#D0D0D0 solid;
 }
 
 .date{
     display: none;
 }
 
-@media screen and (min-width:576px) {
+
+@media screen and (min-width:768px) {
     .bars_btn {
         display: none;
     }
@@ -54,9 +65,7 @@
         top: 20px;
     }
 
-
-    /* .orderSummary{
-        background-color: #198754;
-        opacity: 10%;
-    } */
+    .totalPrice{
+        border: 0px white solid !important;
+    }
 }
