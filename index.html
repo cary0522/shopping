@@ -172,7 +172,7 @@
         products.push(productThree);
         products.push(productFour);
 
-        for (j = 0; j < products.length; j++) {
+        for (var j = 0; j < products.length; j++) {
             let productList = document.querySelector("#productList");
             let newDivList = document.createElement("div");
             newDivList.id = `newDivList${j}`;
@@ -214,7 +214,7 @@
         }
 
         function minus(e) {
-            for (p = 0; p < products.length; p++) {
+            for (var p = 0; p < products.length; p++) {
                 if (e.id == `btnMinus${p}`) {
                     let goods = document.querySelector(`#goods${p}`);
                     let currentValue = parseInt(goods.value);
@@ -229,7 +229,7 @@
         }
 
         function plus(e) {
-            for (p = 0; p < products.length; p++) {
+            for (var p = 0; p < products.length; p++) {
                 if (e.id == `btnPlus${p}`) {
                     let goods = document.querySelector(`#goods${p}`);
                     let currentValue = parseInt(goods.value);
@@ -242,7 +242,7 @@
         }
 
         function join(e) {
-            for (b = 0; b < products.length; b++) {
+            for (var b = 0; b < products.length; b++) {
                 if (e.id == `btnCartShopping${b}`) {
                     if (document.querySelector(`#newDiv${b}`)) {
                         let goods_value = document.querySelector(`#goods${b}`);
@@ -304,7 +304,7 @@
                 }
             }
             let totalPriceSum = 0;
-            for (u = 0; u < products.length; u++) {
+            for (var u = 0; u < products.length; u++) {
                 if (document.querySelector(`#totalPrice${u}`)) {
                     let totalPrice = document.querySelector(`#totalPrice${u}`);
                     let totalPrice_num = parseInt(totalPrice.textContent);
