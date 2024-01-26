@@ -32,6 +32,21 @@
     display: none;
 }
 
+#btnMail , #btnPost {
+    color: white;
+}
+
+#btnMail:hover , #btnPost:hover{
+    background-color: white;
+    color: rgba(25, 134, 83);
+}
+
+#btnMail:focus , #btnPost:focus{
+    background-color: white;
+    color: rgba(25, 134, 83);
+
+}
+
 
 @media screen and (min-width:768px) {
     .bars_btn {
